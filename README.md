@@ -7,13 +7,7 @@ ___
 
 ADA (Artificial Directory and Assistant) is a simple Discord bot written in Python that notifies players of Satisfactory dedicated server saves and crashes.
 
-The dedicated server for Satisfactory currently (as of Update 7) does not notify players of upcomming world saves, and my friends and I found that coincidentally doing large operations during saves (like deleting or Blueprints) tends to crash the server. This bot aims to avoid this issue by giving players in a specific Discord voice channel a warning message just before the server saves. If the server still happens to crash for any reason, the bot will also notify of this.
-
-[Satisfactory](https://www.satisfactorygame.com/) is otherwise a very fun game by Coffee Stain Studios, and is in no way associated with this bot.
-
-___
-
-### Author
+###### Author
 
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
@@ -33,8 +27,14 @@ ___
 <!-- prettier-ignore-end -->
 
 ___
+#### Why?
+The dedicated server for Satisfactory currently (as of Update 7) does not notify players of upcomming world saves, and my friends and I found that coincidentally doing large operations during saves (like deleting or Blueprints) tends to crash the server. This bot aims to avoid this issue by giving players in a specific Discord voice channel a warning message just before the server saves. If the server still happens to crash for any reason, the bot will also notify of this.
 
-### Prerequisites
+[Satisfactory](https://www.satisfactorygame.com/) is otherwise a very fun game by Coffee Stain Studios, and is in no way associated with this bot.
+
+___
+
+## Prerequisites
 
 - Fully installed Satisfactory dedicated server (via SteamCMD or otherwise) that has been booted at least once (to generate the GameUserSettings.ini file).
 - Python 3
@@ -42,11 +42,9 @@ ___
 - PIP (should be included with Python)
 - Discord account with verified email (to access developer portal)
 
-___
+## Installation
 
-### Installation
-
-#### Creating a Discord Application for the Bot
+### Creating a Discord Application for the Bot
 
 1. Go to Discord's [Developer Portal](http://discordapp.com/developers/applications) and log in.
 2. Click "New Application"
@@ -57,17 +55,17 @@ ___
 7. Click the "OAuth2" tab on the left and click "URL Generator".
 8. Check these Scopes:
 
-![Scopes](TODO)
+![scopes](https://user-images.githubusercontent.com/4533989/215032768-fb2c4887-85cd-42fe-adaf-5927f17cb2a6.jpg)
 
 9. Check these Bot Permissions:
 
-![Permissions](TODO)
+![bot_permissions](https://user-images.githubusercontent.com/4533989/215032794-58778138-6889-4996-9965-4ecca7cf9ddb.jpg)
 
 10. Copy the Generated URL, paste it into a new tab, and invite the bot to the Discord server of your choosing.
 
 *(You will need a seperate bot instance / application **per** Satisfactory server, if you're wild like that...)*
 
-#### Installing the Bot
+### Installing the Bot
 
 The bot ***must*** be installed on the same host as the Satisfactory dedicated server. Whether this is on bare metal, a VM, a VPS, or within a Docker container doesn't matter; the bot just needs to be able to see the Satisfactory server process and its save files.
 
@@ -95,7 +93,7 @@ python3 --version
 pip install -r requirements.txt
 ```
 
-#### Configure the Bot
+### Configure the Bot
 
 The `.env` file can be used to configure the bot, or standard OS environment variables can be used (if so, reference the `.env` file for variable names).
 
@@ -112,10 +110,9 @@ The `.env` file can be used to configure the bot, or standard OS environment var
     - Go to the Advanced tab and turn on "Developer Mode"
     - Right click the Channel/User you need the ID for, and click "Copy ID"
 4. Set other settings according to their descriptions.
+5. Save the file.
 
-___
-
-### Startup
+## Startup
 
 Start the bot **before** starting the Satisfactory server.
 
@@ -138,9 +135,7 @@ echo Starting ADA Discord Bot...
 start python "C:\Servers\ADA Discord Bot\bot.py"
 ```
 
-___
-
-### Slash Commands
+## Slash Commands
 
 | Command | Description |
 |---------|-------------|
@@ -150,16 +145,13 @@ ___
 
 The bot also responds positively to "good bot" remarks 🙂
 
-___
+## Additional Notes
 
-### Additional Notes
-
+- If you get "Permission denied" errors, you may need to give appropriate permissions to the `bot.py` and `.env` files (ie. `sudo chmod 755 bot.py .env`).
 - The `/saveinfo` command's "Next Save" and "Time Until Next Save" values are currently calculated relative to the last save's time. Therefore, until the server makes it's first save, these values may be incorrect or unavailable.
 - The bot detects Satisfactory crashes but does not automatically reboot it. I figured most people already have their own solution for this and I didn't want to create a conflict. You can integrate the startup of this bot into the startup solution of you Satisfactory server if you would like to automate things, but this bot ideally *should not* be rebooted when the Satisfactory server is rebooted.
 
-___
-
-### Issues / Feedback
+## Issues / Feedback
 
 If you have have any issues running the bot, please feel free to open an Issue here on Github.
 
