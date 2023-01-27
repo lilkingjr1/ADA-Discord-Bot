@@ -65,7 +65,7 @@ cd /your/path/to/ADA-Discord-Bot
 ```bash
 python --version
 
-OR (depending on what's in your path)
+OR (depending on what's in your PATH)
 
 python3 --version
 ```
@@ -104,7 +104,7 @@ Start with:
 ```bash
 python bot.py
 
-OR (depending on what's in your path)
+OR (depending on what's in your PATH)
 
 python3 bot.py
 ```
