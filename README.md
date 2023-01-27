@@ -7,24 +7,7 @@ ___
 
 ADA (Artificial Directory and Assistant) is a simple Discord bot written in Python that notifies players of Satisfactory dedicated server saves and crashes.
 
-###### Author
-
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-    <tr>
-        <td align="center">
-            <a href="https://github.com/lilkingjr1">
-                <img src="https://avatars.githubusercontent.com/u/4533989" width="50px;" alt=""/><br /><sub><b>Red-Thirten</b></sub>
-            </a>
-            <br />
-            <a href="https://github.com/parkervcp/eggs/commits?author=lilkingjr1" title="Codes">💻</a>
-            <a href="https://github.com/parkervcp/eggs/commits?author=lilkingjr1" title="Maintains">🔨</a>
-        </td>
-    </tr>
-</table>
-<!-- markdownlint-enable -->
-<!-- prettier-ignore-end -->
+![demo](https://user-images.githubusercontent.com/4533989/215037470-5f3ca487-1ebc-4fa6-a015-a522c3a55ffd.jpg)
 
 ___
 #### Why?
@@ -135,7 +118,9 @@ echo Starting ADA Discord Bot...
 start python "C:\Servers\ADA Discord Bot\bot.py"
 ```
 
-## Slash Commands
+## Usage & Commands
+
+The bot will only post/ping about upcomming saves if users are in the configured voice channel. Server crashes will always be posted.
 
 | Command | Description |
 |---------|-------------|
@@ -150,6 +135,7 @@ The bot also responds positively to "good bot" remarks 🙂
 - If you get "Permission denied" errors, you may need to give appropriate permissions to the `bot.py` and `.env` files (ie. `sudo chmod 755 bot.py .env`).
 - The `/saveinfo` command's "Next Save" and "Time Until Next Save" values are currently calculated relative to the last save's time. Therefore, until the server makes it's first save, these values may be incorrect or unavailable.
 - The bot detects Satisfactory crashes but does not automatically reboot it. I figured most people already have their own solution for this and I didn't want to create a conflict. You can integrate the startup of this bot into the startup solution of you Satisfactory server if you would like to automate things, but this bot ideally *should not* be rebooted when the Satisfactory server is rebooted.
+- Manual saves may negatively affect the bot's timer if made between a warning and an auto-save.
 
 ## Issues / Feedback
 
